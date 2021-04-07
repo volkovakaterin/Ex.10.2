@@ -1,8 +1,8 @@
 /* eslint-disable linebreak-style */
-import * as Async from '../app';
+import * as async from '../app';
 
 test('load', async () => {
-  const data = await Async();
+  const data = await async();
   const expected = {
     id: 9,
     created: 1546300800,
