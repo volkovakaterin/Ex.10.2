@@ -1,8 +1,9 @@
 /* eslint-disable linebreak-style */
-import * as async from '../app';
+/* eslint-disable arrow-body-style */
+import GameSavingLoader from '../gameSavingLoader';
 
 test('load', async () => {
-  const data = await async();
+  const data = await GameSavingLoader.load();
   const expected = {
     id: 9,
     created: 1546300800,
@@ -11,4 +12,12 @@ test('load', async () => {
     },
   };
   expect(data).toEqual(expected);
+});
+
+
+test('error', async () => {
+  await GameSavingLoader.load().catch((e) => {
+    expect(e).toMatch('huhhuhhil');
+  });
+  expect.assertions();
 });
